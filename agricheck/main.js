@@ -5,14 +5,6 @@ const container = document.getElementById("heroVisual");
 const dragHint = document.getElementById("dragHint");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (!window.WebGLRenderingContext) {
-  // Sin WebGL: se ve el fondo con degradé del box, sin canvas 3D.
-  canvas.style.display = "none";
-  if (dragHint) dragHint.style.display = "none";
-} else {
-  initScene();
-}
-
 // Paleta real de marca (extraída del sitio en producción de AgriCheck).
 const HUSK_LIGHT = 0x89c444;
 const HUSK_MID = 0x5a9a2e;
@@ -217,4 +209,27 @@ function initScene() {
     if (document.hidden) cancelAnimationFrame(frame);
     else animate();
   });
+}
+
+function hasWebGL() {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl") || c.getContext("experimental-webgl"));
+  } catch {
+    return false;
+  }
+}
+
+if (!hasWebGL()) {
+  // Sin WebGL: queda el degradé de fondo del box, sin canvas 3D.
+  canvas.style.display = "none";
+  if (dragHint) dragHint.style.display = "none";
+} else {
+  try {
+    initScene();
+  } catch (err) {
+    console.error("No se pudo inicializar la escena 3D:", err);
+    canvas.style.display = "none";
+    if (dragHint) dragHint.style.display = "none";
+  }
 }
