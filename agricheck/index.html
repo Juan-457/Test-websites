@@ -3,22 +3,102 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Agricheck — prototipo hero 3D (sandbox, no producción)</title>
+<title>AgriCheck — prototipo 3D (sandbox, no producción)</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<div class="sandbox-flag">Prototipo de diseño — sandbox UmanoAI, no es el sitio publicado</div>
+
+<nav class="nav">
+  <span class="nav-brand">AgriCheck</span>
+  <div class="nav-links">
+    <a href="#historia">Nuestra historia</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
 <header class="hero">
   <canvas id="scene" aria-hidden="true"></canvas>
   <div class="hero-copy">
-    <p class="eyebrow">Prototipo — sandbox, no es el sitio real</p>
-    <h1>Agricheck</h1>
-    <p class="sub">Borrador de hero 3D para evaluar la dirección visual antes de proponerla sobre agrichecksrl.com.</p>
-    <a class="cta" href="#">Ver cómo funciona</a>
+    <p class="eyebrow">Líderes en especialidades</p>
+    <h1>Agroinsumos especiales para agricultura sustentable</h1>
+    <p class="sub">Alimentos y medio ambiente saludables para todos.</p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="#contacto">Hablar con un asesor</a>
+      <a class="cta cta-secondary" href="#beneficios">Ver beneficios</a>
+    </div>
   </div>
 </header>
 
+<section id="historia" class="section">
+  <div class="section-inner narrow">
+    <p class="kicker">Nuestra historia</p>
+    <p class="lead">
+      Desarrollamos y distribuimos soluciones de especialidad para una agricultura sustentable y eficiente.
+      Con más de 25 años de trayectoria, consolidamos un portafolio referente en el mercado gracias a la
+      representación de compañías líderes a nivel mundial en Argentina.
+    </p>
+    <p class="lead muted">
+      Nuestra integración al grupo suizo <strong>Andermatt Group</strong> en 2025 nos permite seguir
+      acercando al productor argentino las últimas innovaciones en control biológico.
+    </p>
+  </div>
+</section>
+
+<section id="beneficios" class="section alt">
+  <div class="section-inner">
+    <p class="kicker">Beneficios</p>
+    <h2>Enfoque técnico-comercial claro</h2>
+    <p class="lead muted">Soluciones sustentables y asesoramiento para implementar tecnologías sin fricción.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🌱</span>
+        <h3>Agricultura sustentable</h3>
+        <p>Soluciones eficientes orientadas a sistemas productivos más responsables.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🔬</span>
+        <h3>Soporte técnico</h3>
+        <p>Acompañamiento en adopción, uso y mejores prácticas en campo.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🧫</span>
+        <h3>Biológicos</h3>
+        <p>Microorganismos benéficos, biofertilizantes y bioestimulantes.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">📦</span>
+        <h3>Portafolio amplio</h3>
+        <p>Control de plagas, enfermedades y promotores de rendimiento.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section contact">
+  <div class="section-inner narrow">
+    <p class="kicker">Contacto</p>
+    <h2>Hablemos de tu campaña</h2>
+    <dl class="contact-list">
+      <div><dt>Dirección</dt><dd>San Juan 50, General Roca, Argentina</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:info@agrichecksrl.com">info@agrichecksrl.com</a></dd></div>
+      <div><dt>Teléfono</dt><dd>+54 9 2984 76-3055</dd></div>
+    </dl>
+    <a class="cta cta-primary" href="mailto:info@agrichecksrl.com">Hablar con un asesor</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© AgriCheck. Diseñado por UmanoAI.</p>
+</footer>
+
 <section class="note">
-  <p><strong>Pendiente antes de portar a producción:</strong> reemplazar geometría placeholder por assets reales del brand kit de Agricheck, correr Loop de Verificación Visual (chrome-devtools + Lighthouse), y confirmar fallback mobile.</p>
+  <p><strong>Pendiente antes de portar a producción:</strong> logos reales de representadas (carrusel "Representaciones exclusivas"), fotos de Instagram, y correr el Loop de Verificación Visual (chrome-devtools + Lighthouse) antes de proponerlo sobre agrichecksrl.com.</p>
 </section>
 
 <script type="importmap">
