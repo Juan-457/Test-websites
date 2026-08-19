@@ -1,184 +1,430 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVHFPWQJ');</script>
+    <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNTX5NWFB5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RNTX5NWFB5');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="llm-friendly" content="true" />
+    
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
 <title>Madex Twin – AgriCheck | Control Combinado de Carpocapsa y Grafolita</title>
-<meta name="description" content="Madex Twin es el primer insecticida biológico que controla simultáneamente Cydia pomonella y Grapholita molesta en frutales de pepita y carozo." />
-<meta name="robots" content="noindex, nofollow" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" /></noscript>
-<link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="description"
+        content="Madex Twin es el primer insecticida biológico que controla simultáneamente Cydia pomonella y Grapholita molesta en frutales de pepita y carozo.">
+        <meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://agrichecksrl.com/madex-twin.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #89C444;
+            --brand-brown: #9A7A4E;
+            --brand-dark-gray: #4B4B4D;
+            --brand-background: #F8F9F7;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--brand-background);
+            color: var(--brand-dark-gray);
+        }
+
+        .hero-bg {
+            /* Imagen de frutales mixtos o manzana/durazno */
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1623265300797-2a2b724f8d27?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            color: var(--brand-dark-gray);
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card {
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(137, 196, 68, 0.15);
+        }
+    
+
+        header{
+            position:sticky;
+            top:0;
+            z-index:60;
+            padding: 10px 0;
+            background: rgba(255,255,255,.92);
+            border-bottom: 1px solid rgba(15, 23, 42, .08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .navWrap{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+        .topbar{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            min-height: 44px;
+            padding-left: 140px;
+            padding-right: 60px;
+        }
+        .brandLogo img{ height:44px; width:auto; display:block; }
+        .brandLogo{
+            position:absolute;
+            left:0;
+            top:50%;
+            transform:translateY(-50%);
+            padding:6px 12px;
+            border-radius:14px;
+            background:#ffffff;
+            border:1px solid rgba(15, 23, 42, .08);
+            box-shadow:0 10px 22px rgba(15, 23, 42, .08);
+        }
+        .navlinks{
+            display:flex;
+            gap: 10px;
+            padding: 6px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 10px 26px rgba(15, 23, 42, .08);
+        }
+        .navlinks a{
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: #475569;
+            letter-spacing: -.01em;
+            transition: background .15s ease, transform .15s ease, color .15s ease;
+        }
+        .navlinks a:hover{ background: rgba(22, 163, 74, .12); transform: translateY(-1px); color: #6aa334; }
+
+        .burger{
+            position:absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px; height: 44px;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, .12);
+            background: rgba(255,255,255,.86);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+        }
+        .burger:focus{ outline: 3px solid rgba(137,196,68,.65); outline-offset: 2px; }
+        .burgerLines{ width: 18px; height: 12px; position:relative; display:block; }
+        .burgerLines span{
+            position:absolute; left:0; width:100%; height:2px; background: #1f2937;
+            border-radius: 999px;
+            transition: transform .18s ease, top .18s ease, opacity .18s ease;
+        }
+        .burgerLines span:nth-child(1){ top:0 }
+        .burgerLines span:nth-child(2){ top:5px }
+        .burgerLines span:nth-child(3){ top:10px }
+
+        .mobileMenu{
+            display:none;
+            padding: 10px 0 14px;
+            background: rgba(255,255,255,.98);
+            border-top: 1px solid rgba(15, 23, 42, .08);
+        }
+        .mobileMenu .navWrap{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .mobileMenu a{
+            padding: 12px 14px;
+            border-radius: 16px;
+            font-weight: 900;
+            color: #475569;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+        }
+
+        body.menuOpen .mobileMenu{ display:block; }
+        body.menuOpen .burgerLines span:nth-child(1){ top:5px; transform: rotate(45deg); }
+        body.menuOpen .burgerLines span:nth-child(2){ opacity:0; }
+        body.menuOpen .burgerLines span:nth-child(3){ top:5px; transform: rotate(-45deg); }
+
+        @media(max-width:900px){
+            .topbar{padding-left:0; padding-right:0;}
+            .navlinks{display:none}
+            .burger{display:flex}
+            .brandLogo{left:12px;}
+        }
+
+    </style>
+  <script defer src="assets/llm-signals.js"></script>
 </head>
-<body>
-<div class="sandbox-flag">Prototipo de diseño — sandbox UmanoAI, no es el sitio publicado de AgriCheck</div>
-<header class="site-header">
-  <div class="nav-bar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">🌾</span>
-      AgriCheck
-    </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="nosotros.html">Nosotros</a>
-<a href="contacto.html">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Hablar con un asesor</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
-  </div>
-</header>
 
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Inicio</a> / <a href="productos.html">Productos</a> / Madex Twin</p>
-    <p class="eyebrow on-dark">DOBLE ACCIÓN ESPECÍFICA</p>
-    <div class="split" style="align-items:center;">
-      <div>
-        <h1>Carpocapsa y Grafolita. Un Solo Producto.</h1>
-        <p>Madex Twin ofrece la versatilidad de controlar simultáneamente dos plagas clave en pomáceas y frutales de carozo con una sola aplicación biológica.</p>
-        <div class="hero-actions" style="margin-top:1.4rem;">
-          <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Madex%20Twin." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-          <a class="btn btn-outline-light" href="contacto.html">Hablar con un asesor</a>
+<body class="text-slate-800">
+
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVHFPWQJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!-- Header -->
+    <header>
+        <div class="navWrap">
+            <div class="topbar">
+                <a class="brandLogo" href="index.html" aria-label="Volver al inicio de AgriCheck">
+                    <img src="agrichecklogo.png" alt="AgriCheck" />
+                </a>
+
+                <nav class="navlinks" aria-label="Navegación principal">
+                    <a href="nuestros-productos.html">Nuestros Productos</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#especificaciones">Especificaciones</a>
+                    <a href="zonas.html">Contacto</a>
+                </nav>
+
+                <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="burgerLines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </div>
         </div>
-        <div class="chip-row" style="margin-top:1.3rem;"><a class="chip" href="productos.html?q=pom%C3%A1ceas">Pomáceas</a><a class="chip" href="productos.html?q=carozo">Carozo</a><a class="chip" href="productos.html?q=carpocapsa">Carpocapsa</a><a class="chip" href="productos.html?q=grafolita">Grafolita</a></div>
-      </div>
-      <div class="hero-media-frame"><img src="images/madex-packaging.webp" alt="Madex Twin" loading="eager" width="1400" height="2615" /></div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="control-poblacion"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Control de población</h2>
-  <p class="section-lead">Autoperpetuación en el Huerto</p>
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Ciclo de Infección Continuo</h3>
-  <p>Las larvas infectadas mueren y licúan, liberando viriones que quedan disponibles para infectar a nuevas larvas que emergen más tarde o en generaciones superpuestas.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Impacto Generacional</h3>
-  <p>Reduce la presión de la plaga para la temporada siguiente gracias a la transmisión vertical (de madres a huevos) y la persistencia de los cuerpos de oclusión en la corteza.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Selectividad Quirúrgica</h3>
-  <p>Ataca dos plagas específicas pero ignora completamente a insectos benéficos, ácaros depredadores y abejas, preservando el equilibrio natural del agroecosistema.</p>
-</article></div></div></section><section class="section section-alt" id="beneficios"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Beneficios</h2>
-  
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">✌</div>
-  <h3>Doble Espectro</h3>
-  <p>Eficacia probada tanto para Cydia pomonella como para Grapholita molesta , simplificando el programa fitosanitario.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🍑</div>
-  <h3>Pepita y Carozo</h3>
-  <p>Ideal para productores mixtos (manzana, pera, durazno, ciruela) que buscan unificar estrategias de control.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🌍</div>
-  <h3>Calidad Andermatt</h3>
-  <p>Desarrollado con un aislado viral único (V22) seleccionado por su virulencia cruzada superior.</p>
-</article></div></div></section><section class="section" id="especificaciones"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Especificaciones técnicas</h2>
-  
-</div>
-<dl class="spec-table"><div class="spec-row"><dt>Ingrediente Activo</dt><dd>Cydia pomonella granulovirus (CpGV), aislado V22</dd></div><div class="spec-row"><dt>Formulación</dt><dd>Suspensión Concentrada (SC)</dd></div><div class="spec-row"><dt>Plagas Objetivo</dt><dd>Carpocapsa ( Cydia pomonella ) y Grafolita ( Grapholita molesta )</dd></div><div class="spec-row"><dt>Dosis Estándar</dt><dd>100 ml/ha</dd></div><div class="spec-row"><dt>Fabricante</dt><dd>Andermatt Biocontrol Suisse</dd></div></dl></div></section>
+        <div class="mobileMenu" id="mobileMenu" aria-label="Menú mobile">
+            <div class="navWrap">
+                <a href="nuestros-productos.html" data-close-menu>Nuestros Productos</a>
+                <a href="#beneficios" data-close-menu>Beneficios</a>
+                <a href="#especificaciones" data-close-menu>Especificaciones</a>
+                <a href="zonas.html" data-close-menu>Contacto</a>
+            </div>
+        </div>
+    </header>
 
-<section class="section">
-  <div class="container">
-    <div class="cta-band">
-  <div class="container">
-    <div>
-      <h2>¿Tenés dudas sobre Madex Twin?</h2>
-      <p>Nuestro equipo técnico-comercial te asesora sin cargo para integrarlo a tu programa de manejo.</p>
-    </div>
-    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Madex%20Twin." target="_blank" rel="noopener">Hablar con un asesor</a>
-      <a class="btn btn-outline-light" href="productos.html">Ver todos los productos</a>
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow on-light">También te puede interesar</p>
-      <h2 class="section-title">Productos relacionados</h2>
-    </div>
-    <div class="product-grid"><article class="product-card" data-name="CheckMate CM-F" data-crops="frutales,manzano,peral,nogal,ciruela" data-issues="carpocapsa,plagas">
-  <a href="checkmate-cm-f.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/checkmate-cm-f.webp" alt="" loading="lazy" width="1400" height="1400" /></a>
-  <div class="body">
-    <h3><a href="checkmate-cm-f.html">CheckMate CM-F</a></h3>
-    <p>Feromona líquida microencapsulada para confusión sexual y control de carpocapsa en frutales.</p>
-    <div class="tags"><span class="tag">Frutales</span><span class="tag">Carpocapsa</span><span class="tag">Confusión sexual</span></div>
-    <a class="go" href="checkmate-cm-f.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="CheckMate OFM-F" data-crops="durazno,nectarina,ciruela,nogal" data-issues="grafolita,plagas">
-  <a href="checkmate-ofm-f.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/checkmate-ofm-f.webp" alt="" loading="lazy" width="1400" height="1400" /></a>
-  <div class="body">
-    <h3><a href="checkmate-ofm-f.html">CheckMate OFM-F</a></h3>
-    <p>Feromona líquida microencapsulada para confusión sexual y control de grafolita en frutales de carozo y nogal.</p>
-    <div class="tags"><span class="tag">Durazno</span><span class="tag">Nectarina</span><span class="tag">Ciruela</span></div>
-    <a class="go" href="checkmate-ofm-f.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="Madex" data-crops="manzano,pera,nogal" data-issues="carpocapsa">
-  <a href="madex.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/madex-packaging.webp" alt="" loading="lazy" width="1400" height="2615" /></a>
-  <div class="body">
-    <h3><a href="madex.html">Madex</a></h3>
-    <p>Bioinsecticida viral (granulovirus) altamente específico para el control de Cydia pomonella.</p>
-    <div class="tags"><span class="tag">Manzano</span><span class="tag">Pera</span><span class="tag">Nogal</span></div>
-    <a class="go" href="madex.html">Ver ficha técnica →</a>
-  </div>
-</article></div>
-  </div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 max-w-7xl">
+                <div class="md:w-3/5">
+                    <span class="font-bold tracking-widest text-green-400">DOBLE ACCIÓN ESPECÍFICA</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight my-4">
+                        Carpocapsa y Grafolita. Un Solo Producto.
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-2xl text-gray-200">
+                        Madex Twin ofrece la versatilidad de controlar simultáneamente dos plagas clave en pomáceas y
+                        frutales de carozo con una sola aplicación biológica.
+                    </p>
+                    <a href="zonas.html"
+                        class="cta-button inline-block bg-white text-green-700 font-bold text-lg py-4 px-8 rounded-full hover:bg-green-50">
+                        Solicitar Asesoramiento
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><span aria-hidden="true">🌾</span> AgriCheck</div>
-        <p style="max-width:34ch; line-height:1.6;">Agroinsumos especiales eficientes para una agricultura sustentable. Control biológico, feromonas, biofertilizantes y bioestimulantes.</p>
-      </div>
-      <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="productos.html">Nuestros productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto y zonas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li>San Juan 50, General Roca, Argentina</li>
-          <li><a href="mailto:info@agrichecksrl.com">info@agrichecksrl.com</a></li>
-          <li><a href="tel:+5492984763055">+54 9 2984 76-3055</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>Copyright © AgriCheck <span data-year></span>. Todos los derechos reservados.</div>
-      <a href="https://umanoai.com.ar" target="_blank" rel="noopener">Diseñado por UmanoAI</a>
-    </div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
+        <!-- Control Poblacional -->
+        <section id="control-poblacion" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold section-title">Poder Viral Multiplicado</h2>
+                    <p class="mt-4 text-xl text-green-700 font-bold">Autoperpetuación en el Huerto</p>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Al igual que otros miembros de la familia Madex, Madex Twin no actúa por shock químico, sino
+                        estableciendo una enfermedad en la población de la plaga.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?q=80&w=2070&auto=format&fit=crop"
+                            alt="Frutales de carozo y pepita" class="rounded-xl shadow-lg">
+                    </div>
+                    <div>
+                        <ul class="space-y-8">
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    🔄</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Ciclo de Infección Continuo</h3>
+                                    <p class="text-gray-600 mt-2">Las larvas infectadas mueren y licúan, liberando
+                                        viriones que quedan disponibles para infectar a nuevas larvas que emergen más
+                                        tarde o en generaciones superpuestas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    🧬</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Impacto Generacional</h3>
+                                    <p class="text-gray-600 mt-2">Reduce la presión de la plaga para la temporada
+                                        siguiente gracias a la transmisión vertical (de madres a huevos) y la
+                                        persistencia de los cuerpos de oclusión en la corteza.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    🎯</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Selectividad Quirúrgica</h3>
+                                    <p class="text-gray-600 mt-2">Ataca dos plagas específicas pero ignora completamente
+                                        a insectos benéficos, ácaros depredadores y abejas, preservando el equilibrio
+                                        natural del agroecosistema.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section id="beneficios" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold section-title">Dos Problemas, Una Solución</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">✌️</div>
+                        <h3 class="text-xl font-bold mb-3">Doble Espectro</h3>
+                        <p class="text-gray-600">Eficacia probada tanto para <i>Cydia pomonella</i> como para
+                            <i>Grapholita molesta</i>, simplificando el programa fitosanitario.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">🍑</div>
+                        <h3 class="text-xl font-bold mb-3">Pepita y Carozo</h3>
+                        <p class="text-gray-600">Ideal para productores mixtos (manzana, pera, durazno, ciruela) que
+                            buscan unificar estrategias de control.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">🌍</div>
+                        <h3 class="text-xl font-bold mb-3">Calidad Andermatt</h3>
+                        <p class="text-gray-600">Desarrollado con un aislado viral único (V22) seleccionado por su
+                            virulencia cruzada superior.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Especificaciones -->
+        <section id="especificaciones" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-green-50 p-8 rounded-2xl border border-green-100">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Datos Técnicos</h2>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Ingrediente Activo</span>
+                            <span class="text-gray-900"><i>Cydia pomonella</i> granulovirus (CpGV), aislado V22</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Formulación</span>
+                            <span class="text-gray-900">Suspensión Concentrada (SC)</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Plagas Objetivo</span>
+                            <span class="text-gray-900">Carpocapsa (<i>Cydia pomonella</i>) y Grafolita (<i>Grapholita
+                                    molesta</i>)</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Dosis Estándar</span>
+                            <span class="text-gray-900">100 ml/ha</span>
+                        </li>
+                        <li class="flex justify-between pt-3">
+                            <span class="font-semibold text-gray-700">Fabricante</span>
+                            <span class="text-gray-900">Andermatt Biocontrol Suisse</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-20 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold mb-6">Simplifique el Control en su Monte Frutal</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:info@agrichecksrl.com"
+                        class="cta-button inline-block bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-green-700">
+                        Consultar sobre Madex Twin
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 AgriCheck S.R.L.</p>
+        </div>
+    </footer>
+
+
+<script>
+        (() => {
+            const burger = document.querySelector('.burger');
+            const menu = document.getElementById('mobileMenu');
+            const closeLinks = document.querySelectorAll('[data-close-menu]');
+            if (!burger || !menu) return;
+            const closeMenu = () => {
+                document.body.classList.remove('menuOpen');
+                burger.setAttribute('aria-expanded', 'false');
+            };
+            burger.addEventListener('click', () => {
+                const isOpen = document.body.classList.toggle('menuOpen');
+                burger.setAttribute('aria-expanded', String(isOpen));
+            });
+            closeLinks.forEach(link => link.addEventListener('click', closeMenu));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+
+  <script src="assets/whatsapp-float.js" defer></script>
 </body>
+
 </html>

@@ -1,236 +1,751 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVHFPWQJ');</script>
+    <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNTX5NWFB5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RNTX5NWFB5');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="llm-friendly" content="true" />
+    
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
 <title>Zimbili – AgriCheck | Biofertilizante Premium</title>
-<meta name="description" content="Zimbili: Raíces Fuertes, Cultivos Sanos. Bioestimulante avanzado con L-triptófano, L-metionina y Ecklonia maxima." />
-<meta name="robots" content="noindex, nofollow" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" /></noscript>
-<link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="description"
+        content="Zimbili: Raíces Fuertes, Cultivos Sanos. Bioestimulante avanzado con L-triptófano, L-metionina y Ecklonia maxima.">
+
+        <meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://agrichecksrl.com/zimbili.html" />
+<!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Outfit for a modern, premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#89C444',
+                            darkGreen: '#6aa32e',
+                            brown: '#9A7A4E',
+                            darkGray: '#4B4B4D',
+                            light: '#F8F9F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Lato', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -5px rgba(137, 196, 68, 0.15)',
+                        'glow': '0 0 20px rgba(137, 196, 68, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Styles */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(137, 196, 68, 0.2), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(154, 122, 78, 0.1), transparent 40%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #4B4B4D 0%, #89C444 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth marquee for partners/trust if needed, or simple float */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+    
+
+        header{
+            position:sticky;
+            top:0;
+            z-index:60;
+            padding: 10px 0;
+            background: rgba(255,255,255,.92);
+            border-bottom: 1px solid rgba(15, 23, 42, .08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .navWrap{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+        .topbar{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            min-height: 44px;
+            padding-left: 140px;
+            padding-right: 60px;
+        }
+        .brandLogo img{ height:44px; width:auto; display:block; }
+        .brandLogo{
+            position:absolute;
+            left:0;
+            top:50%;
+            transform:translateY(-50%);
+            padding:6px 12px;
+            border-radius:14px;
+            background:#ffffff;
+            border:1px solid rgba(15, 23, 42, .08);
+            box-shadow:0 10px 22px rgba(15, 23, 42, .08);
+        }
+        .navlinks{
+            display:flex;
+            gap: 10px;
+            padding: 6px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 10px 26px rgba(15, 23, 42, .08);
+        }
+        .navlinks a{
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: #475569;
+            letter-spacing: -.01em;
+            transition: background .15s ease, transform .15s ease, color .15s ease;
+        }
+        .navlinks a:hover{ background: rgba(22, 163, 74, .12); transform: translateY(-1px); color: #6aa334; }
+
+        .burger{
+            position:absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px; height: 44px;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, .12);
+            background: rgba(255,255,255,.86);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+        }
+        .burger:focus{ outline: 3px solid rgba(137,196,68,.65); outline-offset: 2px; }
+        .burgerLines{ width: 18px; height: 12px; position:relative; display:block; }
+        .burgerLines span{
+            position:absolute; left:0; width:100%; height:2px; background: #1f2937;
+            border-radius: 999px;
+            transition: transform .18s ease, top .18s ease, opacity .18s ease;
+        }
+        .burgerLines span:nth-child(1){ top:0 }
+        .burgerLines span:nth-child(2){ top:5px }
+        .burgerLines span:nth-child(3){ top:10px }
+
+        .mobileMenu{
+            display:none;
+            padding: 10px 0 14px;
+            background: rgba(255,255,255,.98);
+            border-top: 1px solid rgba(15, 23, 42, .08);
+        }
+        .mobileMenu .navWrap{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .mobileMenu a{
+            padding: 12px 14px;
+            border-radius: 16px;
+            font-weight: 900;
+            color: #475569;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+        }
+
+        body.menuOpen .mobileMenu{ display:block; }
+        body.menuOpen .burgerLines span:nth-child(1){ top:5px; transform: rotate(45deg); }
+        body.menuOpen .burgerLines span:nth-child(2){ opacity:0; }
+        body.menuOpen .burgerLines span:nth-child(3){ top:5px; transform: rotate(-45deg); }
+
+        @media(max-width:900px){
+            .topbar{padding-left:0; padding-right:0;}
+            .navlinks{display:none}
+            .burger{display:flex}
+            .brandLogo{left:12px;}
+        }
+
+    </style>
+  <script defer src="assets/llm-signals.js"></script>
 </head>
-<body>
-<div class="sandbox-flag">Prototipo de diseño — sandbox UmanoAI, no es el sitio publicado de AgriCheck</div>
-<header class="site-header">
-  <div class="nav-bar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">🌾</span>
-      AgriCheck
-    </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="nosotros.html">Nosotros</a>
-<a href="contacto.html">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Hablar con un asesor</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
-  </div>
-</header>
 
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Inicio</a> / <a href="productos.html">Productos</a> / Zimbili</p>
-    <p class="eyebrow on-dark">Soja</p>
-    <div class="split" style="align-items:center;">
-      <div>
-        <h1>Raíces Fuertes, Cultivos Sanos.</h1>
-        <p>Zimbili combina la potencia de precursores hormonales y extractos marinos para revolucionar el sistema radicular y maximizar la absorción de nutrientes.</p>
-        <div class="hero-actions" style="margin-top:1.4rem;">
-          <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Zimbili." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-          <a class="btn btn-outline-light" href="contacto.html">Hablar con un asesor</a>
+<body
+    class="bg-brand-light text-brand-darkGray overflow-x-hidden antialiased selection:bg-brand-green selection:text-white">
+
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVHFPWQJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!-- Navbar -->
+
+    <!-- Header -->
+    <header>
+        <div class="navWrap">
+            <div class="topbar">
+                <a class="brandLogo" href="index.html" aria-label="Volver al inicio de AgriCheck">
+                    <img src="agrichecklogo.png" alt="AgriCheck" />
+                </a>
+
+                <nav class="navlinks" aria-label="Navegación principal">
+                    <a href="nuestros-productos.html">Nuestros Productos</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="zonas.html">Contacto</a>
+                </nav>
+
+                <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="burgerLines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </div>
         </div>
-        <div class="chip-row" style="margin-top:1.3rem;"><a class="chip" href="productos.html?q=soja">Soja</a><a class="chip" href="productos.html?q=ma%C3%ADz">Maíz</a><a class="chip" href="productos.html?q=trigo">Trigo</a><a class="chip" href="productos.html?q=cebada">Cebada</a><a class="chip" href="productos.html?q=ra%C3%ADces">Raíces</a></div>
-      </div>
-      <div class="hero-media-frame"><img src="images/zimbili.webp" alt="Zimbili" loading="eager" width="1400" height="1400" /></div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="seccion-0"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Más información</h2>
-  
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Estrés Radicular</h3>
-  <p>El Problema Suelos compactados y sequías limitan el desarrollo temprano.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Zimbili</h3>
-  <p>La Solución Bioestimulación dirigida para reactivar el crecimiento.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Explosión de Vida</h3>
-  <p>El Resultado Raíces densas, mayor absorción y cultivos vigorosos.</p>
-</article></div></div></section><section class="section section-alt" id="modo-de-accion"><div class="container"><div class="section-head">
-  <p class="eyebrow on-light">Ciencia al Servicio del Agro</p>
-  <h2 class="section-title">Modo de acción</h2>
-  <p class="section-lead">Zimbili no es magia, es fisiología vegetal avanzada. Una formulación única que integra tres motores de crecimiento.</p>
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🧬</div>
-  <h3>L-Triptófano</h3>
-  <p>El precursor directo de la Auxina (IAA). Actúa como una llave maestra que ordena a la planta generar nuevas raíces laterales y pelos absorbentes. Apoya la respuesta al estrés abiótico.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🛡</div>
-  <h3>L-Metionina</h3>
-  <p>Regulador del etileno. En dosis precisas, estimula el crecimiento de pelos radiculares , promueve la germinación y activa las defensas naturales ante el estrés.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🌊</div>
-  <h3>Ecklonia maxima</h3>
-  <p>Extracto de alga premium ( Ecklonia maxima pura). Rico en auxinas naturales y compuestos bioactivos que promueven la división celular y el alivio del estrés.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Potenciador de la Vida del Suelo</h3>
-  <p>Zimbili crea el hábitat ideal (rizosfera activa) para que los microorganismos benéficos prosperen. Al aumentar la exudación radicular, alimenta y multiplica la vida del suelo.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Sinergia con Biofungicidas</h3>
-  <p>Maximiza la colonización de cepas como Bacillus velezensis (Amyprotec 42), creando una barrera biológica impenetrable alrededor de la raíz.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Más Nódulos, Más Nitrógeno</h3>
-  <p>En leguminosas, Zimbili promueve una infección más rápida y efectiva por rizobios, incrementando significativamente el número y peso de los nódulos.</p>
-</article></div></div></section><section class="section" id="testimonios"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Testimonios</h2>
-  <p class="section-lead">Ensayos realizados en Sudáfrica (2023-2024).</p>
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Trigo</h3>
-  <p>Incremento de rendimiento en sinergia con Amyprotec 42 . Fuente: Ensayo Trigo 2024.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Maíz</h3>
-  <p>Mayor peso seco de raíz (19.04g vs 15.80g). Tallos más gruesos y vigorosos. Fuente: Ensayo Maíz 2024.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Soja</h3>
-  <p>Rendimiento superior (2.41 t/ha vs 2.03 t/ha) y mayor nodulación. Fuente: Ensayo Soja 2024.</p>
-</article></div></div></section><section class="section section-alt" id="beneficios"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Beneficios</h2>
-  <p class="section-lead">Resultados visibles desde la implantación hasta la cosecha.</p>
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Más Raíz</h3>
-  <p>Incrementa dramáticamente el volumen radicular y la exploración del perfil del suelo.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Anti-Estrés</h3>
-  <p>Blindaje fisiológico contra sequías temporales y estrés por trasplante.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Ultra Estable</h3>
-  <p>Fórmula líquida estable que no requiere cadena de frío. Logística simplificada.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Rentabilidad</h3>
-  <p>Retorno de inversión superior gracias a mayores rendimientos finales.</p>
-</article></div></div></section><section class="section" id="specs"><div class="container"><div class="split">
-  <div><div class="section-head">
-  
-  <h2 class="section-title">Especificaciones técnicas</h2>
-</div>
-<div class="info-block"><p>Especificaciones de Uso y Composición</p></div></div>
-  <img src="images/maiz.webp" alt="Zimbili — contexto de cultivo" loading="lazy" width="1400" height="933" />
-</div></div></section>
+        <div class="mobileMenu" id="mobileMenu" aria-label="Menú mobile">
+            <div class="navWrap">
+                <a href="nuestros-productos.html" data-close-menu>Nuestros Productos</a>
+                <a href="#beneficios" data-close-menu>Beneficios</a>
+                <a href="zonas.html" data-close-menu>Contacto</a>
+            </div>
+        </div>
+    </header>
 
-<section class="section">
-  <div class="container">
-    <div class="cta-band">
-  <div class="container">
-    <div>
-      <h2>¿Tenés dudas sobre Zimbili?</h2>
-      <p>Nuestro equipo técnico-comercial te asesora sin cargo para integrarlo a tu programa de manejo.</p>
-    </div>
-    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Zimbili." target="_blank" rel="noopener">Hablar con un asesor</a>
-      <a class="btn btn-outline-light" href="productos.html">Ver todos los productos</a>
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow on-light">También te puede interesar</p>
-      <h2 class="section-title">Productos relacionados</h2>
-    </div>
-    <div class="product-grid"><article class="product-card" data-name="Zumsil" data-crops="soja,maiz,trigo,cebada,girasol,hortalizas,frutales" data-issues="estres,rendimiento,nutricion">
-  <a href="zumsil.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/zumsil.webp" alt="" loading="lazy" width="1400" height="1400" /></a>
-  <div class="body">
-    <h3><a href="zumsil.html">Zumsil</a></h3>
-    <p>Aporte de silicio biodisponible para fortalecer la planta y mejorar su respuesta frente al estrés.</p>
-    <div class="tags"><span class="tag">Soja</span><span class="tag">Maíz</span><span class="tag">Trigo</span></div>
-    <a class="go" href="zumsil.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="Phosbac" data-crops="soja,maiz,trigo,cebada,girasol" data-issues="nutricion,arranque">
-  <a href="phosbac.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/phosbac-botella.webp" alt="" loading="lazy" width="1400" height="1400" /></a>
-  <div class="body">
-    <h3><a href="phosbac.html">Phosbac</a></h3>
-    <p>Solubilizador biológico de fósforo con Bacillus velezensis FZB45 para potenciar rendimiento y calidad.</p>
-    <div class="tags"><span class="tag">Soja</span><span class="tag">Maíz</span><span class="tag">Trigo</span></div>
-    <a class="go" href="phosbac.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="V12 Initiate" data-crops="soja,maiz,trigo" data-issues="raiz,arranque">
-  <a href="v12-initiate.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/maiz.webp" alt="" loading="lazy" width="1400" height="933" /></a>
-  <div class="body">
-    <h3><a href="v12-initiate.html">V12 Initiate</a></h3>
-    <p>Suspensión concentrada que fusiona silicio, calcio y bioestimulantes para blindar el cultivo desde la semilla.</p>
-    <div class="tags"><span class="tag">Arrancador</span><span class="tag">Silicio</span><span class="tag">Calcio</span></div>
-    <a class="go" href="v12-initiate.html">Ver ficha técnica →</a>
-  </div>
-</article></div>
-  </div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center relative pt-20 overflow-hidden hero-gradient">
+            <!-- Background Decoration -->
+            <div
+                class="absolute top-0 right-0 w-2/3 h-full bg-[url('https://images.unsplash.com/photo-1625246333195-551e5124b96d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 blur-sm mix-blend-multiply pointer-events-none">
+            </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><span aria-hidden="true">🌾</span> AgriCheck</div>
-        <p style="max-width:34ch; line-height:1.6;">Agroinsumos especiales eficientes para una agricultura sustentable. Control biológico, feromonas, biofertilizantes y bioestimulantes.</p>
-      </div>
-      <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="productos.html">Nuestros productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto y zonas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li>San Juan 50, General Roca, Argentina</li>
-          <li><a href="mailto:info@agrichecksrl.com">info@agrichecksrl.com</a></li>
-          <li><a href="tel:+5492984763055">+54 9 2984 76-3055</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>Copyright © AgriCheck <span data-year></span>. Todos los derechos reservados.</div>
-      <a href="https://umanoai.com.ar" target="_blank" rel="noopener">Diseñado por UmanoAI</a>
-    </div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
+            <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center max-w-7xl">
+                <div class="space-y-8 reveal-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 text-brand-darkGreen border border-brand-green/20 font-semibold text-sm tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                        Nueva Generación de Bioestimulantes
+                    </div>
+
+                    <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.1] text-brand-darkGray">
+                        Raíces Fuertes, <br>
+                        <span class="text-brand-green">Cultivos Sanos.</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
+                        <strong>Zimbili</strong> combina la potencia de precursores hormonales y extractos marinos para
+                        revolucionar el sistema radicular y maximizar la absorción de nutrientes.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="zonas.html"
+                            class="inline-flex justify-center items-center px-8 py-4 bg-brand-green text-white rounded-full font-bold text-lg hover:bg-brand-darkGreen hover:shadow-glow transform hover:-translate-y-1 transition-all duration-300">
+                            Prueba Zimbili Hoy
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#modo-de-accion"
+                            class="inline-flex justify-center items-center px-8 py-4 bg-white text-brand-darkGray border border-gray-200 rounded-full font-bold text-lg hover:border-brand-green hover:text-brand-green transition-all duration-300">
+                            Ver Tecnología
+                        </a>
+                    </div>
+
+                    <div class="pt-8 flex items-center gap-6 text-sm font-semibold text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-green"></i> 100% Biológico
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-green"></i> Sin Residuos
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-brand-green"></i> Tecnología Andermatt
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Image Hero -->
+                <div class="relative reveal-on-scroll flex justify-center" style="transition-delay: 200ms;">
+                    <div class="relative z-10 w-full max-w-sm">
+                        <!-- Glass effect backdrop -->
+                        <div
+                            class="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-full blur-3xl transform scale-110">
+                        </div>
+                        <img src="Zimbili.webp" alt="Zimbili 1L"
+                            class="relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500 mx-auto">
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl floating-icon border border-gray-100 hidden md:block z-20">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-brand-green/10 p-3 rounded-full text-brand-green">
+                                    <i class="fas fa-arrow-up text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-bold uppercase">Rendimiento</p>
+                                    <p class="text-xl font-extrabold text-brand-darkGray">+15%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem/Solution Strip -->
+        <section class="py-12 bg-white border-y border-gray-100">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
+                    <div class="p-6 reveal-on-scroll">
+                        <p class="text-gray-400 font-bold text-sm uppercase mb-2">El Problema</p>
+                        <h3 class="text-xl font-bold text-brand-darkGray">Estrés Radicular</h3>
+                        <p class="text-gray-600 mt-2 text-sm px-4">Suelos compactados y sequías limitan el desarrollo
+                            temprano.</p>
+                    </div>
+                    <div class="p-6 reveal-on-scroll" style="transition-delay: 100ms;">
+                        <p class="text-brand-green font-bold text-sm uppercase mb-2">La Solución</p>
+                        <h3 class="text-xl font-bold text-brand-darkGray">Zimbili</h3>
+                        <p class="text-gray-600 mt-2 text-sm px-4">Bioestimulación dirigida para reactivar el
+                            crecimiento.</p>
+                    </div>
+                    <div class="p-6 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <p class="text-gray-400 font-bold text-sm uppercase mb-2">El Resultado</p>
+                        <h3 class="text-xl font-bold text-brand-darkGray">Explosión de Vida</h3>
+                        <p class="text-gray-600 mt-2 text-sm px-4">Raíces densas, mayor absorción y cultivos vigorosos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="modo-de-accion" class="py-24 bg-brand-light relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-7xl relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
+                    <span class="text-brand-brown font-bold tracking-widest uppercase text-sm">Ciencia al Servicio del
+                        Agro</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold mt-3 mb-6">Tridente Biológico de Poder
+                    </h2>
+                    <p class="text-lg text-gray-600">Zimbili no es magia, es fisiología vegetal avanzada. Una
+                        formulación única que integra tres motores de crecimiento.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Tryptophan Card -->
+                    <div
+                        class="group bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-premium transition-all duration-500 reveal-on-scroll cursor-default border border-transparent hover:border-brand-green/20">
+                        <div
+                            class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            🧬
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-green transition-colors">
+                            L-Triptófano</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            El precursor directo de la Auxina (IAA). Actúa como una llave maestra que ordena a la planta
+                            generar <strong>nuevas raíces laterales</strong> y pelos absorbentes. Apoya la respuesta al
+                            estrés abiótico.
+                        </p>
+                        <div class="h-1 w-12 bg-gray-200 group-hover:bg-brand-green transition-colors rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Methionine Card -->
+                    <div class="group bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-premium transition-all duration-500 reveal-on-scroll cursor-default border border-transparent hover:border-brand-green/20"
+                        style="transition-delay: 100ms;">
+                        <div
+                            class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            🛡️
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-green transition-colors">
+                            L-Metionina</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Regulador del etileno. En dosis precisas, estimula el crecimiento de <strong>pelos
+                                radiculares</strong>,
+                            promueve la germinación y activa las defensas naturales ante el estrés.
+                        </p>
+                        <div class="h-1 w-12 bg-gray-200 group-hover:bg-brand-green transition-colors rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Ecklonia Card -->
+                    <div class="group bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-premium transition-all duration-500 reveal-on-scroll cursor-default border border-transparent hover:border-brand-green/20"
+                        style="transition-delay: 200ms;">
+                        <div
+                            class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            🌊
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-4 group-hover:text-brand-green transition-colors">
+                            Ecklonia maxima</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Extracto de alga premium (<i>Ecklonia maxima</i> pura). Rico en auxinas naturales y
+                            compuestos bioactivos
+                            que promueven la división celular y el alivio del estrés.
+                        </p>
+                        <div class="h-1 w-12 bg-gray-200 group-hover:bg-brand-green transition-colors rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Synergy Concept -->
+                <div
+                    class="mt-20 bg-brand-darkGray rounded-[3rem] p-10 md:p-16 text-white relative overflow-hidden reveal-on-scroll">
+                    <!-- Background blobs -->
+                    <div
+                        class="absolute top-0 right-0 p-32 bg-brand-green/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 p-32 bg-brand-brown/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2">
+                    </div>
+
+                    <div class="relative z-10 text-center mb-12">
+                        <span class="text-brand-green font-bold tracking-widest uppercase text-sm">El Socio
+                            Biológico</span>
+                        <h3 class="font-heading text-3xl md:text-5xl font-bold mt-2 mb-6">Potenciador de la Vida del
+                            Suelo</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                            Zimbili crea el hábitat ideal (rizosfera activa) para que los microorganismos benéficos
+                            prosperen. Al aumentar la exudación radicular, alimenta y multiplica la vida del suelo.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                        <!-- Card 1: FZB42 Synergy -->
+                        <div
+                            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all duration-300 group">
+                            <div class="h-64 overflow-hidden rounded-2xl mb-6 relative">
+                                <img src="Zimbili.webp" alt="Sinergia Zimbili con Bacillus velezensis"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div
+                                    class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white">
+                                    + Bacillus velezensis
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-brand-green mb-2">Sinergia con Biofungicidas</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Maximiza la colonización de cepas como <i>Bacillus velezensis</i> (Amyprotec 42),
+                                creando una barrera biológica impenetrable alrededor de la raíz.
+                            </p>
+                        </div>
+
+                        <!-- Card 2: Nodulation Synergy -->
+                        <div
+                            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all duration-300 group">
+                            <div class="h-64 overflow-hidden rounded-2xl mb-6 relative">
+                                <img src="Zimbili.webp" alt="Mayor nodulación en soja con Zimbili"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div
+                                    class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white">
+                                    + Fijación de Nitrógeno
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-brand-green mb-2">Más Nódulos, Más Nitrógeno</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                En leguminosas, Zimbili promueve una infección más rápida y efectiva por rizobios,
+                                incrementando significativamente el número y peso de los nódulos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados Comprobados (Trial Data) -->
+        <section id="testimonios" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="font-heading text-4xl font-extrabold text-brand-darkGray">Resultados Comprobados en Campo
+                    </h2>
+                    <p class="text-xl text-gray-500 mt-4">Ensayos realizados en Sudáfrica (2023-2024).</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Trial 1: Wheat -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center reveal-on-scroll">
+                        <div class="text-5xl font-bold text-brand-green mb-2">+8.8%</div>
+                        <h4 class="text-lg font-bold text-gray-700 uppercase tracking-wide mb-4">Trigo</h4>
+                        <p class="text-gray-600">Incremento de rendimiento en sinergia con <i>Amyprotec 42</i>.</p>
+                        <p class="text-xs text-gray-400 mt-4">Fuente: Ensayo Trigo 2024.</p>
+                    </div>
+                    <!-- Trial 2: Corn -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center reveal-on-scroll"
+                        style="transition-delay: 100ms;">
+                        <div class="text-5xl font-bold text-brand-green mb-2">+20%</div>
+                        <h4 class="text-lg font-bold text-gray-700 uppercase tracking-wide mb-4">Maíz</h4>
+                        <p class="text-gray-600">Mayor peso seco de raíz (19.04g vs 15.80g). Tallos más gruesos y
+                            vigorosos.</p>
+                        <p class="text-xs text-gray-400 mt-4">Fuente: Ensayo Maíz 2024.</p>
+                    </div>
+                    <!-- Trial 3: Soybean -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center reveal-on-scroll"
+                        style="transition-delay: 200ms;">
+                        <div class="text-5xl font-bold text-brand-green mb-2">+18%</div>
+                        <h4 class="text-lg font-bold text-gray-700 uppercase tracking-wide mb-4">Soja</h4>
+                        <p class="text-gray-600">Rendimiento superior (2.41 t/ha vs 2.03 t/ha) y mayor nodulación.</p>
+                        <p class="text-xs text-gray-400 mt-4">Fuente: Ensayo Soja 2024.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Grid -->
+        <section id="beneficios" class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal-on-scroll">
+                    <div class="max-w-2xl">
+                        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-darkGray mb-4">¿Por qué
+                            elegir Zimbili?</h2>
+                        <p class="text-xl text-gray-500">Resultados visibles desde la implantación hasta la cosecha.</p>
+                    </div>
+                    <a href="zonas.html"
+                        class="hidden md:inline-flex items-center gap-2 text-brand-green font-bold hover:text-brand-darkGreen transition-colors mt-6 md:mt-0">
+                        Hablar con un técnico <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Benefit 1 -->
+                    <div
+                        class="p-8 bg-brand-light rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group reveal-on-scroll">
+                        <i
+                            class="fas fa-tree text-4xl text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-xl mb-3">Más Raíz</h3>
+                        <p class="text-gray-600 text-sm">Incrementa dramáticamente el volumen radicular y la exploración
+                            del perfil del suelo.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div class="p-8 bg-brand-light rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group reveal-on-scroll"
+                        style="transition-delay: 100ms;">
+                        <i
+                            class="fas fa-shield-alt text-4xl text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-xl mb-3">Anti-Estrés</h3>
+                        <p class="text-gray-600 text-sm">Blindaje fisiológico contra sequías temporales y estrés por
+                            trasplante.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div class="p-8 bg-brand-light rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group reveal-on-scroll"
+                        style="transition-delay: 200ms;">
+                        <i
+                            class="fas fa-flask text-4xl text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-xl mb-3">Ultra Estable</h3>
+                        <p class="text-gray-600 text-sm">Fórmula líquida estable que no requiere cadena de frío.
+                            Logística simplificada.</p>
+                    </div>
+                    <!-- Benefit 4 -->
+                    <div class="p-8 bg-brand-light rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300 group reveal-on-scroll"
+                        style="transition-delay: 300ms;">
+                        <i
+                            class="fas fa-chart-line text-4xl text-brand-green mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-xl mb-3">Rentabilidad</h3>
+                        <p class="text-gray-600 text-sm">Retorno de inversión superior gracias a mayores rendimientos
+                            finales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs Table -->
+        <section id="specs" class="py-24 bg-brand-light">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden reveal-on-scroll">
+                    <div class="bg-brand-darkGray p-8 text-white text-center">
+                        <h2 class="font-heading text-3xl font-bold">Ficha Técnica</h2>
+                        <p class="opacity-80 mt-2">Especificaciones de Uso y Composición</p>
+                    </div>
+                    <div class="p-8 md:p-12">
+                        <div class="space-y-6">
+                            <div class="flex flex-col sm:flex-row justify-between border-b border-gray-100 pb-4">
+                                <span
+                                    class="font-bold text-gray-500 uppercase text-xs tracking-wider">Composición</span>
+                                <span class="font-semibold text-gray-800 text-right">L-triptófano + L-Metionina +
+                                    Extracto <i>Ecklonia maxima</i></span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-between border-b border-gray-100 pb-4">
+                                <span
+                                    class="font-bold text-gray-500 uppercase text-xs tracking-wider">Formulación</span>
+                                <span class="font-semibold text-gray-800 text-right">Suspensión Concentrada (SC)</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-between border-b border-gray-100 pb-4">
+                                <span class="font-bold text-gray-500 uppercase text-xs tracking-wider">Dosis
+                                    General</span>
+                                <span class="font-semibold text-gray-800 text-right">0.25 - 2 Litros / ha (Consulte
+                                    etiqueta)</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-between border-b border-gray-100 pb-4">
+                                <span
+                                    class="font-bold text-gray-500 uppercase text-xs tracking-wider">Presentación</span>
+                                <span class="font-semibold text-gray-800 text-right">Bidones de 5L y 20L</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-between pt-2">
+                                <span class="font-bold text-gray-500 uppercase text-xs tracking-wider">Aplicación</span>
+                                <span class="font-semibold text-gray-800 text-right">Semilla, Drench, Foliar,
+                                    Riego</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Footer Combo -->
+        <section id="contacto" class="py-24 bg-brand-darkGray relative overflow-hidden text-center">
+            <!-- Background glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[100px] pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10 max-w-4xl reveal-on-scroll">
+                <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white mb-8">
+                    ¿Listo para potenciar tu campo?
+                </h2>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    El futuro de la agricultura es biológico. Comienza hoy con Zimbili y ve la diferencia en tus raíces.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="mailto:ventas@agricheck.com"
+                        class="px-10 py-5 bg-brand-green text-white rounded-full font-bold text-lg hover:bg-white hover:text-brand-green transition-all duration-300 shadow-lg hover:shadow-glow">
+                        Contactar Ventas
+                    </a>
+                    <a href="https://wa.me/5491112345678"
+                        class="px-10 py-5 bg-transparent border-2 border-white/20 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                    </a>
+                </div>
+
+                <div
+                    class="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+                    <div class="flex items-center gap-4">
+                        <img src="agrichecklogo.png" alt="AgriCheck Logo"
+                            class="h-8 opacity-50 grayscale hover:grayscale-0 transition-all">
+                        <span>&copy; 2025 AgriCheck S.R.L.</span>
+                    </div>
+                    <div class="flex gap-6">
+                        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                        <a href="#" class="hover:text-white transition-colors">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+<script>
+        (() => {
+            const burger = document.querySelector('.burger');
+            const menu = document.getElementById('mobileMenu');
+            const closeLinks = document.querySelectorAll('[data-close-menu]');
+            if (!burger || !menu) return;
+            const closeMenu = () => {
+                document.body.classList.remove('menuOpen');
+                burger.setAttribute('aria-expanded', 'false');
+            };
+            burger.addEventListener('click', () => {
+                const isOpen = document.body.classList.toggle('menuOpen');
+                burger.setAttribute('aria-expanded', String(isOpen));
+            });
+            closeLinks.forEach(link => link.addEventListener('click', closeMenu));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+
+  <script src="assets/whatsapp-float.js" defer></script>
 </body>
+
 </html>

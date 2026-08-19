@@ -1,184 +1,430 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVHFPWQJ');</script>
+    <!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNTX5NWFB5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RNTX5NWFB5');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="llm-friendly" content="true" />
+    
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
 <title>Plutex – AgriCheck | Control Biológico de Polilla Dorso de Diamante</title>
-<meta name="description" content="Plutex es un insecticida biológico a base de virus para el control específico de Plutella xylostella en crucíferas (brócoli, repollo, coliflor)." />
-<meta name="robots" content="noindex, nofollow" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800;900&display=swap" rel="stylesheet" /></noscript>
-<link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="description"
+        content="Plutex es un insecticida biológico a base de virus para el control específico de Plutella xylostella en crucíferas (brócoli, repollo, coliflor).">
+        <meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://agrichecksrl.com/plutex.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #89C444;
+            --brand-brown: #9A7A4E;
+            --brand-dark-gray: #4B4B4D;
+            --brand-background: #F8F9F7;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--brand-background);
+            color: var(--brand-dark-gray);
+        }
+
+        .hero-bg {
+            /* Imagen de crucíferas/brócoli */
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            color: var(--brand-dark-gray);
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card {
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(137, 196, 68, 0.15);
+        }
+    
+
+        header{
+            position:sticky;
+            top:0;
+            z-index:60;
+            padding: 10px 0;
+            background: rgba(255,255,255,.92);
+            border-bottom: 1px solid rgba(15, 23, 42, .08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .navWrap{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+        .topbar{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            min-height: 44px;
+            padding-left: 140px;
+            padding-right: 60px;
+        }
+        .brandLogo img{ height:44px; width:auto; display:block; }
+        .brandLogo{
+            position:absolute;
+            left:0;
+            top:50%;
+            transform:translateY(-50%);
+            padding:6px 12px;
+            border-radius:14px;
+            background:#ffffff;
+            border:1px solid rgba(15, 23, 42, .08);
+            box-shadow:0 10px 22px rgba(15, 23, 42, .08);
+        }
+        .navlinks{
+            display:flex;
+            gap: 10px;
+            padding: 6px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+            box-shadow: 0 10px 26px rgba(15, 23, 42, .08);
+        }
+        .navlinks a{
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: #475569;
+            letter-spacing: -.01em;
+            transition: background .15s ease, transform .15s ease, color .15s ease;
+        }
+        .navlinks a:hover{ background: rgba(22, 163, 74, .12); transform: translateY(-1px); color: #6aa334; }
+
+        .burger{
+            position:absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px; height: 44px;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, .12);
+            background: rgba(255,255,255,.86);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+        }
+        .burger:focus{ outline: 3px solid rgba(137,196,68,.65); outline-offset: 2px; }
+        .burgerLines{ width: 18px; height: 12px; position:relative; display:block; }
+        .burgerLines span{
+            position:absolute; left:0; width:100%; height:2px; background: #1f2937;
+            border-radius: 999px;
+            transition: transform .18s ease, top .18s ease, opacity .18s ease;
+        }
+        .burgerLines span:nth-child(1){ top:0 }
+        .burgerLines span:nth-child(2){ top:5px }
+        .burgerLines span:nth-child(3){ top:10px }
+
+        .mobileMenu{
+            display:none;
+            padding: 10px 0 14px;
+            background: rgba(255,255,255,.98);
+            border-top: 1px solid rgba(15, 23, 42, .08);
+        }
+        .mobileMenu .navWrap{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .mobileMenu a{
+            padding: 12px 14px;
+            border-radius: 16px;
+            font-weight: 900;
+            color: #475569;
+            background: rgba(15, 23, 42, .04);
+            border: 1px solid rgba(15, 23, 42, .08);
+        }
+
+        body.menuOpen .mobileMenu{ display:block; }
+        body.menuOpen .burgerLines span:nth-child(1){ top:5px; transform: rotate(45deg); }
+        body.menuOpen .burgerLines span:nth-child(2){ opacity:0; }
+        body.menuOpen .burgerLines span:nth-child(3){ top:5px; transform: rotate(-45deg); }
+
+        @media(max-width:900px){
+            .topbar{padding-left:0; padding-right:0;}
+            .navlinks{display:none}
+            .burger{display:flex}
+            .brandLogo{left:12px;}
+        }
+
+    </style>
+  <script defer src="assets/llm-signals.js"></script>
 </head>
-<body>
-<div class="sandbox-flag">Prototipo de diseño — sandbox UmanoAI, no es el sitio publicado de AgriCheck</div>
-<header class="site-header">
-  <div class="nav-bar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">🌾</span>
-      AgriCheck
-    </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="nosotros.html">Nosotros</a>
-<a href="contacto.html">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Hablar con un asesor</a>
-    </nav>
-    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
-  </div>
-</header>
 
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Inicio</a> / <a href="productos.html">Productos</a> / Plutex</p>
-    <p class="eyebrow on-dark">CONTROL DE POLILLA DORSO DE DIAMANTE</p>
-    <div class="split" style="align-items:center;">
-      <div>
-        <h1>Protección Biológica para sus Crucíferas.</h1>
-        <p>Plutex es la solución definitiva contra la resistencia de Plutella xylostella . Un bioinsecticida viral que actúa donde los químicos fallan.</p>
-        <div class="hero-actions" style="margin-top:1.4rem;">
-          <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Plutex." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-          <a class="btn btn-outline-light" href="contacto.html">Hablar con un asesor</a>
+<body class="text-slate-800">
+
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVHFPWQJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!-- Header -->
+    <header>
+        <div class="navWrap">
+            <div class="topbar">
+                <a class="brandLogo" href="index.html" aria-label="Volver al inicio de AgriCheck">
+                    <img src="agrichecklogo.png" alt="AgriCheck" />
+                </a>
+
+                <nav class="navlinks" aria-label="Navegación principal">
+                    <a href="nuestros-productos.html">Nuestros Productos</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#especificaciones">Especificaciones</a>
+                    <a href="zonas.html">Contacto</a>
+                </nav>
+
+                <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="burgerLines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </div>
         </div>
-        <div class="chip-row" style="margin-top:1.3rem;"><a class="chip" href="productos.html?q=br%C3%B3coli">Brócoli</a><a class="chip" href="productos.html?q=repollo">Repollo</a><a class="chip" href="productos.html?q=coliflor">Coliflor</a><a class="chip" href="productos.html?q=orugas">Orugas</a></div>
-      </div>
-      <div class="hero-media-frame"><img src="images/plutex.webp" alt="Plutex" loading="eager" width="1400" height="1400" /></div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="control-poblacion"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Control de población</h2>
-  <p class="section-lead">La Ciencia del Colapso Poblacional</p>
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Fábricas de Virus</h3>
-  <p>Cada oruga infectada se convierte en un centro de producción viral. Al morir, libera millones de cuerpos de inclusión que infectan a otras orugas cercanas (Transmisión Horizontal).</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Efecto a Largo Plazo</h3>
-  <p>El virus persiste en el ambiente protegido por su cubierta proteica y se transmite a la descendencia de las supervivientes (Transmisión Vertical), reduciendo el vigor de la siguiente generación.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">•</div>
-  <h3>Indepenencia de Dosis</h3>
-  <p>Su eficacia no se diluye como un químico. Una vez que el virus entra y se replica, el desenlace es fatal, asegurando un control robusto independientemente de la cantidad inicial ingerida.</p>
-</article></div></div></section><section class="section section-alt" id="beneficios"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Beneficios</h2>
-  
-</div>
-<div class="grid grid-3"><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🛡</div>
-  <h3>Rompe Resistencias</h3>
-  <p>Plutella xylostella es famosa por su resistencia a químicos. Plutex ofrece un modo de acción totalmente diferente (Grupo 31), ideal para recuperar el control.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🐝</div>
-  <h3>Seguro para Polinizadores</h3>
-  <p>Totalmente inofensivo para abejas y fauna benéfica. Compatible con programas de control biológico con parasitoides.</p>
-</article><article class="benefit-card">
-  <div class="benefit-icon" aria-hidden="true">🥗</div>
-  <h3>Sin Residuos</h3>
-  <p>Ideal para hortalizas de consumo fresco. Aplicación permitida hasta la cosecha (PHI: 0 días).</p>
-</article></div></div></section><section class="section" id="especificaciones"><div class="container"><div class="section-head">
-  
-  <h2 class="section-title">Especificaciones técnicas</h2>
-  
-</div>
-<dl class="spec-table"><div class="spec-row"><dt>Ingrediente Activo</dt><dd>Plutella xylostella granulovirus (PlxyGV)</dd></div><div class="spec-row"><dt>Formulación</dt><dd>Suspensión Concentrada (SC)</dd></div><div class="spec-row"><dt>Cultivos</dt><dd>Repollo, Brócoli, Coliflor, Canola</dd></div><div class="spec-row"><dt>Dosis Estándar</dt><dd>100 ml/ha</dd></div><div class="spec-row"><dt>Fabricante</dt><dd>Andermatt Biocontrol Suisse</dd></div></dl></div></section>
+        <div class="mobileMenu" id="mobileMenu" aria-label="Menú mobile">
+            <div class="navWrap">
+                <a href="nuestros-productos.html" data-close-menu>Nuestros Productos</a>
+                <a href="#beneficios" data-close-menu>Beneficios</a>
+                <a href="#especificaciones" data-close-menu>Especificaciones</a>
+                <a href="zonas.html" data-close-menu>Contacto</a>
+            </div>
+        </div>
+    </header>
 
-<section class="section">
-  <div class="container">
-    <div class="cta-band">
-  <div class="container">
-    <div>
-      <h2>¿Tenés dudas sobre Plutex?</h2>
-      <p>Nuestro equipo técnico-comercial te asesora sin cargo para integrarlo a tu programa de manejo.</p>
-    </div>
-    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20consultar%20sobre%20Plutex." target="_blank" rel="noopener">Hablar con un asesor</a>
-      <a class="btn btn-outline-light" href="productos.html">Ver todos los productos</a>
-    </div>
-  </div>
-</div>
-  </div>
-</section>
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow on-light">También te puede interesar</p>
-      <h2 class="section-title">Productos relacionados</h2>
-    </div>
-    <div class="product-grid"><article class="product-card" data-name="Beauvisan" data-crops="hortalizas,frutales" data-issues="plagas">
-  <a href="beauvisan.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/beavisan-1kg.webp" alt="" loading="lazy" width="1024" height="1024" /></a>
-  <div class="body">
-    <h3><a href="beauvisan.html">Beauvisan</a></h3>
-    <p>Bioinsecticida de amplio espectro para control biológico de plagas.</p>
-    <div class="tags"><span class="tag">Hortalizas</span><span class="tag">Frutales</span><span class="tag">Plagas</span></div>
-    <a class="go" href="beauvisan.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="Nomu-Protec" data-crops="maiz,soja" data-issues="orugas,plagas">
-  <a href="nomu-protec.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/nomu.webp" alt="" loading="lazy" width="1400" height="1400" /></a>
-  <div class="body">
-    <h3><a href="nomu-protec.html">Nomu-Protec</a></h3>
-    <p>Bioinsecticida fúngico para el manejo de larvas de lepidópteros.</p>
-    <div class="tags"><span class="tag">Maíz</span><span class="tag">Orugas</span><span class="tag">Plagas</span></div>
-    <a class="go" href="nomu-protec.html">Ver ficha técnica →</a>
-  </div>
-</article>
-<article class="product-card" data-name="Tutavir SC" data-crops="tomate" data-issues="orugas,plagas">
-  <a href="tutavir.html" class="thumb" aria-hidden="true" tabindex="-1"><img src="images/tutavir-sc.webp" alt="" loading="lazy" width="1024" height="1024" /></a>
-  <div class="body">
-    <h3><a href="tutavir.html">Tutavir SC</a></h3>
-    <p>Bioinsecticida viral específico para el control de Tuta absoluta en tomate.</p>
-    <div class="tags"><span class="tag">Tomate</span><span class="tag">Tuta absoluta</span><span class="tag">Orugas</span></div>
-    <a class="go" href="tutavir.html">Ver ficha técnica →</a>
-  </div>
-</article></div>
-  </div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 max-w-7xl">
+                <div class="md:w-3/5">
+                    <span class="font-bold tracking-widest text-green-400">CONTROL DE POLILLA DORSO DE DIAMANTE</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight my-4">
+                        Protección Biológica para sus Crucíferas.
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-2xl text-gray-200">
+                        Plutex es la solución definitiva contra la resistencia de <i>Plutella xylostella</i>. Un
+                        bioinsecticida viral que actúa donde los químicos fallan.
+                    </p>
+                    <a href="zonas.html"
+                        class="cta-button inline-block bg-white text-green-700 font-bold text-lg py-4 px-8 rounded-full hover:bg-green-50">
+                        Solicitar Asesoramiento
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><span aria-hidden="true">🌾</span> AgriCheck</div>
-        <p style="max-width:34ch; line-height:1.6;">Agroinsumos especiales eficientes para una agricultura sustentable. Control biológico, feromonas, biofertilizantes y bioestimulantes.</p>
-      </div>
-      <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="productos.html">Nuestros productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto y zonas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li>San Juan 50, General Roca, Argentina</li>
-          <li><a href="mailto:info@agrichecksrl.com">info@agrichecksrl.com</a></li>
-          <li><a href="tel:+5492984763055">+54 9 2984 76-3055</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>Copyright © AgriCheck <span data-year></span>. Todos los derechos reservados.</div>
-      <a href="https://umanoai.com.ar" target="_blank" rel="noopener">Diseñado por UmanoAI</a>
-    </div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
+        <!-- Control Poblacional -->
+        <section id="control-poblacion" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold section-title">Más que un Insecticida</h2>
+                    <p class="mt-4 text-xl text-green-700 font-bold">La Ciencia del Colapso Poblacional</p>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        Plutex no solo mata individuos; introduce un agente de control que se perpetúa en el cultivo,
+                        reduciendo la presión de la plaga generación tras generación.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="CurciferasSanas.webp"
+                            alt="Crucíferas sanas" class="rounded-xl shadow-lg">
+                    </div>
+                    <div>
+                        <ul class="space-y-8">
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    🦠</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Fábricas de Virus</h3>
+                                    <p class="text-gray-600 mt-2">Cada oruga infectada se convierte en un centro de
+                                        producción viral. Al morir, libera millones de cuerpos de inclusión que infectan
+                                        a otras orugas cercanas (Transmisión Horizontal).</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    📉</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Efecto a Largo Plazo</h3>
+                                    <p class="text-gray-600 mt-2">El virus persiste en el ambiente protegido por su
+                                        cubierta proteica y se transmite a la descendencia de las supervivientes
+                                        (Transmisión Vertical), reduciendo el vigor de la siguiente generación.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-2xl mr-4">
+                                    ⚡</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">Indepenencia de Dosis</h3>
+                                    <p class="text-gray-600 mt-2">Su eficacia no se diluye como un químico. Una vez que
+                                        el virus entra y se replica, el desenlace es fatal, asegurando un control
+                                        robusto independientemente de la cantidad inicial ingerida.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section id="beneficios" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold section-title">Ventajas Competitivas</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-bold mb-3">Rompe Resistencias</h3>
+                        <p class="text-gray-600"><i>Plutella xylostella</i> es famosa por su resistencia a químicos.
+                            Plutex ofrece un modo de acción totalmente diferente (Grupo 31), ideal para recuperar el
+                            control.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">🐝</div>
+                        <h3 class="text-xl font-bold mb-3">Seguro para Polinizadores</h3>
+                        <p class="text-gray-600">Totalmente inofensivo para abejas y fauna benéfica. Compatible con
+                            programas de control biológico con parasitoides.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl border border-gray-100 text-center">
+                        <div class="text-4xl mb-4">🥗</div>
+                        <h3 class="text-xl font-bold mb-3">Sin Residuos</h3>
+                        <p class="text-gray-600">Ideal para hortalizas de consumo fresco. Aplicación permitida hasta la
+                            cosecha (PHI: 0 días).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Especificaciones -->
+        <section id="especificaciones" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-green-50 p-8 rounded-2xl border border-green-100">
+                    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Datos Técnicos</h2>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Ingrediente Activo</span>
+                            <span class="text-gray-900"><i>Plutella xylostella</i> granulovirus (PlxyGV)</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Formulación</span>
+                            <span class="text-gray-900">Suspensión Concentrada (SC)</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Cultivos</span>
+                            <span class="text-gray-900">Repollo, Brócoli, Coliflor, Canola</span>
+                        </li>
+                        <li class="flex justify-between border-b border-green-200 pb-3">
+                            <span class="font-semibold text-gray-700">Dosis Estándar</span>
+                            <span class="text-gray-900">100 ml/ha</span>
+                        </li>
+                        <li class="flex justify-between pt-3">
+                            <span class="font-semibold text-gray-700">Fabricante</span>
+                            <span class="text-gray-900">Andermatt Biocontrol Suisse</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-20 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold mb-6">Recupere el Control en sus Crucíferas</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:info@agrichecksrl.com"
+                        class="cta-button inline-block bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-green-700">
+                        Consultar sobre Plutex
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 AgriCheck S.R.L.</p>
+        </div>
+    </footer>
+
+
+<script>
+        (() => {
+            const burger = document.querySelector('.burger');
+            const menu = document.getElementById('mobileMenu');
+            const closeLinks = document.querySelectorAll('[data-close-menu]');
+            if (!burger || !menu) return;
+            const closeMenu = () => {
+                document.body.classList.remove('menuOpen');
+                burger.setAttribute('aria-expanded', 'false');
+            };
+            burger.addEventListener('click', () => {
+                const isOpen = document.body.classList.toggle('menuOpen');
+                burger.setAttribute('aria-expanded', String(isOpen));
+            });
+            closeLinks.forEach(link => link.addEventListener('click', closeMenu));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+
+  <script src="assets/whatsapp-float.js" defer></script>
 </body>
+
 </html>
