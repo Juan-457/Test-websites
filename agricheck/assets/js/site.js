@@ -32,6 +32,49 @@
     document.body.appendChild(link);
   }
 
+  // Hero: video de fondo progresivo. El póster (<img>) ya cubre el LCP; el
+  // video no lleva atributo poster para no competir como candidato de LCP,
+  // y se pide recién tras "load" para no restar ancho de banda a los
+  // recursos críticos de arranque. Respeta prefers-reduced-motion.
+  const heroVideo = document.getElementById("heroVideo");
+  if (heroVideo) {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const src = heroVideo.getAttribute("data-src");
+    if (!prefersReducedMotion && src) {
+      const startHeroVideo = () => {
+        const source = document.createElement("source");
+        source.src = src;
+        source.type = "video/mp4";
+        heroVideo.appendChild(source);
+        heroVideo.addEventListener("canplay", () => heroVideo.classList.add("is-playing"), { once: true });
+        heroVideo.setAttribute("autoplay", "");
+        heroVideo.load();
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+      };
+      if (document.readyState === "complete") {
+        startHeroVideo();
+      } else {
+        window.addEventListener("load", startHeroVideo, { once: true });
+      }
+    }
+  }
+
+  // Hero: buscador de cultivo/problemática → catálogo (assets/js filtra por ?crop=/?issue=/?q=)
+  const heroSearch = document.getElementById("heroSearch");
+  if (heroSearch) {
+    const stripAccents = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    heroSearch.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const crop = stripAccents((document.getElementById("cropQuery").value || "").trim().toLowerCase());
+      const issue = stripAccents((document.getElementById("issueQuery").value || "").trim().toLowerCase());
+      const params = new URLSearchParams();
+      const q = [crop, issue].filter(Boolean).join(" ");
+      if (q) params.set("q", q);
+      window.location.href = params.toString() ? `productos.html?${params.toString()}` : "productos.html";
+    });
+  }
+
   // Filtro de catálogo (solo corre si existen los nodos en productos.html)
   const grid = document.getElementById("productGrid");
   if (grid) {

@@ -37,6 +37,11 @@
 </header>
 
 <section class="hero" id="inicio">
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-media-poster" src="assets/img/hero-poster.webp" srcset="assets/img/hero-poster-750.webp 750w, assets/img/hero-poster-1040.webp 1040w, assets/img/hero-poster.webp 1440w" sizes="100vw" alt="" width="1440" height="810" loading="eager" fetchpriority="high" />
+    <video class="hero-media-video" id="heroVideo" muted loop playsinline preload="none" data-src="assets/video/hero-agricheck.mp4"></video>
+    <div class="hero-media-overlay"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="eyebrow on-dark">Líderes en especialidades</p>
@@ -46,16 +51,22 @@
         <a class="btn btn-primary" href="https://wa.me/5492984763055?text=Hola%20AgriCheck%2C%20quiero%20hablar%20con%20un%20asesor." target="_blank" rel="noopener">Hablar con un asesor</a>
         <a class="btn btn-outline-light" href="productos.html">Ver productos</a>
       </div>
+      <form class="hero-search" id="heroSearch" role="search" aria-label="Buscar por cultivo o problemática">
+        <div class="hero-search-field">
+          <label class="sr-only" for="cropQuery">Cultivo</label>
+          <input id="cropQuery" name="crop" type="search" placeholder="Cultivo (ej: Maíz, trigo)" autocomplete="off" />
+        </div>
+        <div class="hero-search-field">
+          <label class="sr-only" for="issueQuery">Problemática</label>
+          <input id="issueQuery" name="issue" type="search" placeholder="Problemática (ej: plagas, hongos)" autocomplete="off" />
+        </div>
+        <button type="submit">Buscar</button>
+      </form>
       <div class="hero-stats">
         <div class="hero-stat"><b>+25</b><span>años de trayectoria</span></div>
         <div class="hero-stat"><b>31</b><span>soluciones de especialidad</span></div>
         <div class="hero-stat"><b>7</b><span>zonas con asesor técnico</span></div>
       </div>
-    </div>
-    <div class="hero-visual" id="heroVisual">
-      <img id="heroPoster" class="hero-poster" width="512" height="512" src="_maiz_ia_small.webp" srcset="_maiz_ia_small.webp 512w, _maiz_ia.webp 1024w" sizes="(max-width: 900px) 90vw, 480px" alt="Mazorca de maíz — ilustración de AgriCheck" loading="eager" fetchpriority="high" />
-      <canvas id="scene" tabindex="0" role="img" aria-label="Modelo 3D interactivo de una mazorca de maíz. Arrastrá con el mouse o el dedo, o usá las flechas del teclado, para rotarlo."></canvas>
-      <p class="drag-hint" id="dragHint" aria-hidden="true">Arrastrá para girar ↔</p>
     </div>
   </div>
 </section>
@@ -244,14 +255,6 @@
     </div>
   </div>
 </footer>
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-  }
-}
-</script>
-<script type="module" src="assets/js/hero-corn.js"></script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
