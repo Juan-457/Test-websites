@@ -3,28 +3,27 @@ import * as THREE from "three";
 const canvas = document.getElementById("scene");
 const container = document.getElementById("heroVisual");
 const dragHint = document.getElementById("dragHint");
+const poster = document.getElementById("heroPoster");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Paleta real de marca (extraída del sitio en producción de AgriCheck).
+// Paleta real de marca AgriCheck + dorado trigo del rediseño.
 const HUSK_LIGHT = 0x89c444;
-const HUSK_MID = 0x5a9a2e;
-const HUSK_DEEP = 0x1b3d10;
-const KERNEL_LIGHT = 0xf2c94c;
-const KERNEL_DEEP = 0xd9a73b;
-const SILK_COLOR = 0xe8d9a0;
+const HUSK_MID = 0x4c9a2a;
+const HUSK_DEEP = 0x163a10;
+const KERNEL_LIGHT = 0xe0a92f;
+const KERNEL_DEEP = 0xa9791f;
+const SILK_COLOR = 0xeec468;
 
 function buildCorn() {
   const group = new THREE.Group();
   const cobHeight = 1.5;
   const cobRadius = 0.34;
 
-  // Núcleo de la mazorca.
   const coreGeo = new THREE.CylinderGeometry(cobRadius * 0.85, cobRadius, cobHeight, 12);
   const coreMat = new THREE.MeshStandardMaterial({ color: KERNEL_DEEP, roughness: 0.7 });
   const core = new THREE.Mesh(coreGeo, coreMat);
   group.add(core);
 
-  // Granos: instancedMesh de bultos pequeños en filas alrededor del núcleo.
   const rows = 12;
   const cols = 16;
   const kernelGeo = new THREE.SphereGeometry(0.052, 6, 5);
@@ -57,7 +56,6 @@ function buildCorn() {
   if (kernels.instanceColor) kernels.instanceColor.needsUpdate = true;
   group.add(kernels);
 
-  // Chala: hojas curvas que envuelven la parte inferior y se abren en la punta.
   const huskCount = 6;
   for (let i = 0; i < huskCount; i++) {
     const huskHeight = cobHeight * (0.75 + Math.random() * 0.35);
@@ -65,8 +63,8 @@ function buildCorn() {
     const pos = huskGeo.attributes.position;
     for (let v = 0; v < pos.count; v++) {
       const y = pos.getY(v);
-      const t = (y + huskHeight / 2) / huskHeight; // 0 abajo, 1 arriba
-      const bend = t > 0.55 ? (t - 0.55) / 0.45 : 0; // se abre en el tercio superior
+      const t = (y + huskHeight / 2) / huskHeight;
+      const bend = t > 0.55 ? (t - 0.55) / 0.45 : 0;
       pos.setZ(v, cobRadius * 1.05 + bend * bend * 0.55);
       pos.setX(v, pos.getX(v) * (1 - bend * 0.3));
     }
@@ -83,7 +81,6 @@ function buildCorn() {
     group.add(husk);
   }
 
-  // Hebras de "pelo" de choclo en la punta.
   for (let i = 0; i < 10; i++) {
     const silkGeo = new THREE.CylinderGeometry(0.004, 0.008, 0.32 + Math.random() * 0.18, 3);
     const silkMat = new THREE.MeshStandardMaterial({ color: SILK_COLOR, roughness: 0.9 });
@@ -113,7 +110,7 @@ function initScene() {
   const key = new THREE.DirectionalLight(0xfff4d6, 1.15);
   key.position.set(3, 4, 2);
   scene.add(key);
-  const rim = new THREE.PointLight(0x89c444, 0.7);
+  const rim = new THREE.PointLight(0xe0a92f, 0.7);
   rim.position.set(-3, 1, -2);
   scene.add(rim);
 
@@ -128,7 +125,9 @@ function initScene() {
   resize();
   new ResizeObserver(resize).observe(container);
 
-  // --- Interacción: arrastrar (mouse/touch) rota el maíz, con inercia al soltar. Teclado: flechas. ---
+  // Una vez que el canvas renderiza el primer frame, ocultamos el poster estático.
+  if (poster) poster.style.opacity = "0";
+
   let isDragging = false;
   let lastX = 0;
   let lastY = 0;
@@ -220,16 +219,30 @@ function hasWebGL() {
   }
 }
 
-if (!hasWebGL()) {
-  // Sin WebGL: queda el degradé de fondo del box, sin canvas 3D.
-  canvas.style.display = "none";
-  if (dragHint) dragHint.style.display = "none";
-} else {
+// Fallback estático: sin WebGL (o low-end/mobile muy limitado) se queda la
+// imagen poster real de la mazorca (_maiz_ia.webp) en vez del canvas 3D.
+function boot() {
   try {
     initScene();
   } catch (err) {
     console.error("No se pudo inicializar la escena 3D:", err);
     canvas.style.display = "none";
     if (dragHint) dragHint.style.display = "none";
+    if (poster) poster.style.opacity = "1";
+  }
+}
+
+if (!canvas || !hasWebGL()) {
+  if (canvas) canvas.style.display = "none";
+  if (dragHint) dragHint.style.display = "none";
+  if (poster) poster.style.opacity = "1";
+} else {
+  // Se difiere la construcción de la geometría 3D (costosa en CPU) a un
+  // momento idle, para no competir con el primer pintado del hero (LCP es
+  // el <h1>, no el canvas) — sensible sobre todo en mobile/CPU limitada.
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(boot, { timeout: 1200 });
+  } else {
+    setTimeout(boot, 150);
   }
 }

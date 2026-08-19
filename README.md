@@ -11,4 +11,4 @@ Sandbox de diseño de UmanoAI para probar tendencias visuales (ej. héroes 3D/We
 
 ## Prototipos
 
-- `/agricheck` — hero 3D de prueba para agrichecksrl.com (repo real: `Juan-457/AgriCheck`). Estado: borrador inicial, sin verificar.
+- `/agricheck` — rediseño completo del sitio de agrichecksrl.com (repo real: `Juan-457/AgriCheck`), con el hero 3D de la mazorca de maíz como pieza central de la home. 35 páginas HTML/CSS/JS estático sin build tooling: home, nosotros, catálogo filtrable, contacto/zonas y 31 fichas de producto — todas con contenido real extraído del sitio en producción (sin placeholders). Identidad visual propia (verde monte + dorado trigo + papel crudo) sobre la tipografía Lato original, sin cambios. Estado: **verificado** — pasó el Loop de Verificación Visual (screenshots desktop 1440×900 + mobile 390×844, Lighthouse Performance 87-100 / Accessibility 95-100 / Best Practices 100 en las páginas muestreadas; SEO ronda 60-63 solo por el `noindex` intencional del sandbox). Pendiente: revisión del dueño antes de considerarlo candidato a producción; ver notas de `pendiente_verificar` en el registro de tarea del agente `diseno-web`.
